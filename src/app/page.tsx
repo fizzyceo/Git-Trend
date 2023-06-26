@@ -15,7 +15,7 @@ export default function Home() {
           </LargeHeading>
 
           <Paragraph className="md:text-left" size="default">
-            Explore github's trendy repositories with{" "}
+            Explore github&apos;s trendy repositories with{" "}
             <a href="/" className="underline font-bold dark:text-[#82d87e]">
               {" "}
               our API
