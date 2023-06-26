@@ -13,7 +13,6 @@ import APIOptions from './APIOptions'
 import { Button } from './ui/Button'
 import { Copy } from 'lucide-react'
 import CopyButton from './ui/CopyButton'
-import { ApiKey } from '@prisma/client'
 
 const ApiAvailable: FC =async ({}) => {
   const user = await getServerSession(authOptions)
@@ -23,7 +22,7 @@ const ApiAvailable: FC =async ({}) => {
       userId:user.user.id
     }
   })
-  const activeApiKey=apiKeys.find((apiKey:ApiKey) => apiKey.enabled)
+  const activeApiKey=apiKeys.find((key) => key.enabled)
   if(!activeApiKey) return notFound()
   const userRequests = await db.apiRequest.findMany({
     where:{
