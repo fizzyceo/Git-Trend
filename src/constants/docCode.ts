@@ -2,7 +2,7 @@ export const nodejsStars = `const axios = require("axios");
 
 const options = {
     method: 'POST',
-    url: 'https://gittrendapi.com/api/v1/gittrend/stars',
+    url: 'https://git-trends-one.vercel.app/api/v1/gittrend/stars',
     data: {
       fromDate: '2023-06-01',
       min_stars:'2000',
@@ -22,7 +22,7 @@ export const nodejsContributions = `const axios = require("axios");
 
 const options = {
     method: 'POST',
-    url: 'https://gittrendapi.com/api/v1/gittrend/contributions',
+    url: 'https://git-trends-one.vercel.app/api/v1/gittrend/contributions',
     data: {
         fromDate: '2023-06-01',
         num_repositories: '100'
@@ -41,7 +41,7 @@ export const nodejsForks = `const axios = require("axios");
 
 const options = {
     method: 'POST',
-    url: 'https://gittrendapi.com/api/v1/gittrend/forks',
+    url: 'https://git-trends-one.vercel.app/api/v1/gittrend/forks',
     data: {
         fromDate: '2023-06-01',
         min_forks:'2000',
@@ -60,7 +60,7 @@ axios.request(options).then(function (response) {
 
 export const pythonStars = `import requests
 
-url = 'https://gittrendapi.com/api/v1/gittrend/stars'
+url = 'https://git-trends-one.vercel.app/api/v1/gittrend/stars'
 api_key = 'YOUR_API_KEY'
 fromDate= '2023-06-01'
 min_stars='2000'
@@ -85,7 +85,7 @@ else:
     print(f'Request failed with status code {response.status_code}')`;
 export const pythonContributions = `import requests
 
-url = 'https://gittrendapi.com/api/v1/gittrend/contributions'
+url = 'https://git-trends-one.vercel.app/api/v1/gittrend/contributions'
 api_key = 'YOUR_API_KEY'
 fromDate= '2023-06-01'
 num_repositories= '100'
@@ -108,7 +108,7 @@ else:
     print(f'Request failed with status code {response.status_code}')`;
 export const pythonForks = `import requests
 
-url = 'https://gittrendapi.com/api/v1/gittrend/forks'
+url = 'https://git-trends-one.vercel.app/api/v1/gittrend/forks'
 api_key = 'YOUR_API_KEY'
 fromDate= '2023-06-01'
 min_forks='2000'
