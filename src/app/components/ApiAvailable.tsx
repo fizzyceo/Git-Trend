@@ -10,8 +10,6 @@ import Paragraph from './ui/Paragraph'
 import Input from './ui/Input'
 import Table from './Table'
 import APIOptions from './APIOptions'
-import { Button } from './ui/Button'
-import { Copy } from 'lucide-react'
 import CopyButton from './ui/CopyButton'
 
 const ApiAvailable: FC =async ({}) => {
