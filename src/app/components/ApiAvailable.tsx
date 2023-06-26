@@ -11,6 +11,7 @@ import Input from './ui/Input'
 import Table from './Table'
 import APIOptions from './APIOptions'
 import CopyButton from './ui/CopyButton'
+import { ApiKey } from '@prisma/client'
 
 const ApiAvailable: FC =async ({}) => {
   const user = await getServerSession(authOptions)
@@ -20,7 +21,7 @@ const ApiAvailable: FC =async ({}) => {
       userId:user.user.id
     }
   })
-  const activeApiKey=apiKeys.find((key) => key.enabled)
+  const activeApiKey=apiKeys.find((key:ApiKey) => key.enabled)
   if(!activeApiKey) return notFound()
   const userRequests = await db.apiRequest.findMany({
     where:{
