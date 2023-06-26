@@ -17,6 +17,18 @@ interface ApiKeyType {
   enabled: boolean;
   userId: string;
 }
+
+interface ApiRequestType {
+  id: string;
+  timestamp: Date;
+  method: string;
+  path: string;
+  status: number;
+  duration: number;
+  usedApiKey: string;
+  apiKeyId: string;
+}
+
 const ApiAvailable: FC =async ({}) => {
   const user = await getServerSession(authOptions)
   if (!user) return notFound()
@@ -34,7 +46,7 @@ const ApiAvailable: FC =async ({}) => {
       } 
     }
   })
-  const serializedRequests = userRequests.map((request) => ({
+  const serializedRequests = userRequests.map((request:ApiRequestType) => ({
     ...request,
     timestamp: formatDistance(new Date(request.timestamp), new Date())
   }))
