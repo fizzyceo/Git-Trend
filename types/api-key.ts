@@ -1,6 +1,11 @@
-import { ApiKey } from '@prisma/client'
-import { ZodIssue } from 'zod'
 
+import { ZodIssue } from 'zod'
+interface ApiKey  {
+  id: string;
+  key: string;
+  enabled: boolean;
+  userId: string;
+}
 export interface CreateApiData {
   error: string | ZodIssue[] | null
   createdApiKey: ApiKey | null
