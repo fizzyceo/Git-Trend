@@ -4,8 +4,9 @@ const options = {
     method: 'POST',
     url: 'https://gittrendapi.com/api/v1/gittrend/stars',
     data: {
-      text1: 'First text',
-      text2: 'Second text'
+      fromDate: '2023-06-01',
+      min_stars:'2000',
+      num_repositories: '100'
     },
     headers: {
       'Authorization': 'YOUR_API_KEY',
@@ -23,8 +24,8 @@ const options = {
     method: 'POST',
     url: 'https://gittrendapi.com/api/v1/gittrend/contributions',
     data: {
-      text1: 'First text',
-      text2: 'Second text'
+        fromDate: '2023-06-01',
+        num_repositories: '100'
     },
     headers: {
       'Authorization': 'YOUR_API_KEY',
@@ -42,8 +43,9 @@ const options = {
     method: 'POST',
     url: 'https://gittrendapi.com/api/v1/gittrend/forks',
     data: {
-      text1: 'First text',
-      text2: 'Second text'
+        fromDate: '2023-06-01',
+        min_forks:'2000',
+        num_repositories: '100'
     },
     headers: {
       'Authorization': 'YOUR_API_KEY',
@@ -60,16 +62,18 @@ export const pythonStars = `import requests
 
 url = 'https://gittrendapi.com/api/v1/gittrend/stars'
 api_key = 'YOUR_API_KEY'
-text1 = 'First text'
-text2 = 'Second text'
+fromDate= '2023-06-01'
+min_stars='2000'
+num_repositories= '100'
 
 headers = {
     'Authorization': api_key
 }
 
 payload = {
-    'text1': text1,
-    'text2': text2
+    'fromDate': fromDate
+    'min_stars':min_stars,
+    'num_repositories': num_repositories
 }
 
 response = requests.post(url, headers=headers, json=payload)
@@ -83,16 +87,16 @@ export const pythonContributions = `import requests
 
 url = 'https://gittrendapi.com/api/v1/gittrend/contributions'
 api_key = 'YOUR_API_KEY'
-text1 = 'First text'
-text2 = 'Second text'
+fromDate= '2023-06-01'
+num_repositories= '100'
 
 headers = {
     'Authorization': api_key
 }
 
 payload = {
-    'text1': text1,
-    'text2': text2
+    'fromDate': fromDate,
+    'num_repositories': num_repositories
 }
 
 response = requests.post(url, headers=headers, json=payload)
@@ -106,16 +110,19 @@ export const pythonForks = `import requests
 
 url = 'https://gittrendapi.com/api/v1/gittrend/forks'
 api_key = 'YOUR_API_KEY'
-text1 = 'First text'
-text2 = 'Second text'
+fromDate= '2023-06-01'
+min_forks='2000'
+num_repositories='100'
+
 
 headers = {
     'Authorization': api_key
 }
 
 payload = {
-    'text1': text1,
-    'text2': text2
+    'fromDate': fromDate,
+    'min_stars':min_stars,
+    'num_repositories': num_repositories
 }
 
 response = requests.post(url, headers=headers, json=payload)

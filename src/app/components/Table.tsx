@@ -73,6 +73,10 @@ const Table: FC<TableProps> = ({ userRequests }) => {
     pageSizeOptions={[5]}
     disableRowSelectionOnClick
     autoHeight
+    initialState={{
+      
+      pagination: { paginationModel: { pageSize: 5 } },
+    }}
     />
   </ThemeProvider>;
 };
