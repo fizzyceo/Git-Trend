@@ -2,7 +2,15 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Paragraph from "./components/ui/Paragraph";
 import LargeHeading from "./components/ui/LargeHeading";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: 'Git Trends API',
+  description: 'Free & open-source repositories trends API ',
+  icons:{
+    icon:'/integration.png'
+  }
+}
 export default function Home() {
   return (
     <main className="max-w-screen min-h-screen flex items-center justify-center mx-auto py-20">

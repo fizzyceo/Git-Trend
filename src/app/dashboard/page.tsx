@@ -9,10 +9,12 @@ import ApiAvailable from '../components/ApiAvailable'
 import RequestApiKey from '../components/RequestApiKey'
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
-  description: 'Free & open-source text github API'
+  title: 'Git Trends API | Dashboard',
+  description: 'Free & open-source repositories trends API ',
+  icons:{
+    icon:'/integration.png'
+  }
 }
-
 const page = async () => {
   const user = await getServerSession(authOptions)
   if (!user) return notFound()
