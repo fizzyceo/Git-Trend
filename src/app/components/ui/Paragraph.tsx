@@ -29,5 +29,6 @@ const Paragraph=forwardRef<HTMLParagraphElement,ParagraphProps>(({
 )
 }
 )
+Paragraph.displayName = "Paragraph";
 
 export default Paragraph

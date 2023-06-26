@@ -30,5 +30,6 @@ const LargeHeading=forwardRef<HTMLHeadingElement,HeadingProps>(({
 )
 }
 )
+LargeHeading.displayName = "LargeHeading";
 
 export default LargeHeading

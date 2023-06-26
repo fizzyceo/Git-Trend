@@ -29,5 +29,6 @@ const CopyButton= forwardRef<HTMLButtonElement,CopyButtonProps>(({apkiKey,classN
 // ({apkiKey}) => {
 //     return   //   }
   
+CopyButton.displayName = "CopyButton";
 
 export default CopyButton
