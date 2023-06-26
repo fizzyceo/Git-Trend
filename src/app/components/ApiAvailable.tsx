@@ -25,12 +25,12 @@ const ApiAvailable: FC =async ({}) => {
       userId:user.user.id
     }
   })
-  const activeApiKey=apiKeys.find((key:ApiKeyType) => key.enabled)
+  const activeApiKey=apiKeys.find((key:ApiKeyType) => key.enabled) as ApiKeyType
   if(!activeApiKey) return notFound()
   const userRequests = await db.apiRequest.findMany({
     where:{
       apiKeyId:{
-        in:apiKeys.map((apiKey) => apiKey.id)
+        in:apiKeys.map((apiKey:ApiKeyType) => apiKey.id)
       } 
     }
   })
