@@ -6,6 +6,8 @@ import { buttonVariants } from "./ui/Button";
 import SignOutButton from "./SignOutButton";
 import SignInButton from "./SignInButton";
 import { authOptions } from "@/lib/Auth";
+import MobileMenu from "./MobileMenu";
+import { Menu } from "lucide-react";
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions);
@@ -17,12 +19,15 @@ const Navbar = async () => {
           Fizzy&apos;s API V1.0
         </Link>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex flex-row items-center gap-5">
           <ThemeToggle />
+          
+          <MobileMenu session={session? true: false} />
         </div>
 
         <div className="hidden md:flex items-center  gap-4">
           <ThemeToggle />
+
           <Link
             href="/documentation"
             className={buttonVariants({ variant: "ghost" })}>
